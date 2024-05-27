@@ -34,7 +34,7 @@ function App() {
   return (
     <>
     <h1>Stopwatch</h1>
-      <h3>time:{formatTime(timer)}</h3>
+      <h3>Time:{formatTime(timer)}</h3>
       <button onClick={handleStartorStop}>{isRunning ? 'Stop' : 'Start'}</button>
       <button onClick={handleRestart}>Reset</button>
     </>
