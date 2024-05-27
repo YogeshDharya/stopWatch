@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 import './App.css';
 
@@ -15,6 +14,7 @@ function App() {
     const seconds = timeInSeconds % 60;
     return `${minutes}:${String(seconds).padStart(2, '0')}`;
   };
+
   useEffect(() => {
     let intervalID;
 
@@ -27,15 +27,15 @@ function App() {
     return () => clearInterval(intervalID);
   }, [isRunning]);
 
-
-  const handleRestart=()=>{
+  const handleRestart = () => {
     setTimer(0);
     setIsRunning(false);
-  }
+  };
+
   return (
     <>
-    <h1>Stopwatch</h1>
-      <h3>Time:{formatTime(timer)}</h3>
+      <h1>Stopwatch</h1>
+      <h3>Time: {formatTime(timer)}</h3>
       <button onClick={handleStartorStop}>{isRunning ? 'Stop' : 'Start'}</button>
       <button onClick={handleRestart}>Reset</button>
     </>
@@ -43,5 +43,3 @@ function App() {
 }
 
 export default App;
-
-
