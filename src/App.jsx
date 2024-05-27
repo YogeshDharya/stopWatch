@@ -13,7 +13,7 @@ function App() {
   const formatTime = (timeInSeconds) => {
     const minutes = Math.floor(timeInSeconds / 60);
     const seconds = timeInSeconds % 60;
-    return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    return `${minutes}:${String(seconds).padStart(2, '0')}`;
   };
   useEffect(() => {
     let intervalID;
@@ -30,6 +30,7 @@ function App() {
 
   const handleRestart=()=>{
     setTimer(0);
+    setIsRunning(false);
   }
   return (
     <>
